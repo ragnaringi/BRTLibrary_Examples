@@ -23,14 +23,19 @@
 #define _BASICSPATIALISATIONRTAUDIO_H_
 
 #define SAMPLERATE 44100
-#define SOFA1_FILEPATH "../../resources/hrtf.sofa"
-#define SOFA2_FILEPATH "../../resources/hrtf.sofa"
-#define SOURCE1_FILEPATH "../../resources/speech.wav"
-#define SOURCE2_FILEPATH "../../resources/steps.wav"
+#if (__APPLE__)
+#define RESOURCES_PATH "../../../../resources"
+#else
+#define RESOURCES_PATH "../../resources"
+#endif
+#define SOFA1_FILEPATH RESOURCES_PATH "/hrtf.sofa"
+#define SOFA2_FILEPATH RESOURCES_PATH "/hrtf.sofa"
+#define SOURCE1_FILEPATH RESOURCES_PATH "/speech.wav"
+#define SOURCE2_FILEPATH RESOURCES_PATH "/steps.wav"
 #define HRTFRESAMPLINGSTEP 15
-#define ILD_NearFieldEffect_44100 "../../resources/NearFieldCompensation_ILD_44100.sofa"
-#define ILD_NearFieldEffect_48000 "../../resources/NearFieldCompensation_ILD_48000.sofa"
-#define ILD_NearFieldEffect_96000 "../../resources/NearFieldCompensation_ILD_96000.sofa"
+#define ILD_NearFieldEffect_44100 RESOURCES_PATH "/NearFieldCompensation_ILD_44100.sofa"
+#define ILD_NearFieldEffect_48000 RESOURCES_PATH "/NearFieldCompensation_ILD_48000.sofa"
+#define ILD_NearFieldEffect_96000 RESOURCES_PATH "/NearFieldCompensation_ILD_96000.sofa"
 
 #define SOURCE1_INITIAL_AZIMUTH     90
 #define SOURCE1_INITIAL_ELEVATION   0
